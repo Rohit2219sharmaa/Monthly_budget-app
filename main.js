@@ -273,7 +273,13 @@ var controller=(function(bCtrl, uiCtrl){
             }
         });   
         
-        document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+        document.querySelector(DOM.container).addEventListener('click', function(){
+            var decision = confirm("Do you want to delete this enrty? ");
+
+            if (decision) {
+                ctrlDeleteItem(event);
+            } 
+        });
         document.querySelector(DOM.inputType).addEventListener('change', uiCtrl.changedType);
     }
     
